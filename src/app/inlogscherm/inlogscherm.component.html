@@ -1,0 +1,33 @@
+<h1></h1>
+
+<p>
+  <label for="inlognaam">Inlognaam  </label>
+  <input [(ngModel)] = 'inlognaam'>
+</p>
+
+<p>
+  <label for="wachtwoord">Wachtwoord  </label>
+  <input [(ngModel)] = 'wachtwoord'>
+</p>
+
+<p>
+  <button (click) = "inloggen()"> inloggen </button>
+  {{message}}
+</p>  
+
+
+
+<p>
+  <label for="registername">Gebruikersnaam  </label>
+  <input [(ngModel)] = 'registerName'>
+</p>
+
+
+<p>
+  <label for="wachtwoord">Wachtwoord  </label>
+  <input [(ngModel)] = 'setwachtwoord'>
+</p>
+<p>
+  <button (click) = "registrerenMogelijk()"> registreren </button> 
+  {{message1}}
+</p>  
