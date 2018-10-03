@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ServiceService } from '../service/service.service';
+import { ServiceService } from '../Service/service.service';
 import { EvenementDto } from '../models/EvenementDto';
 
 @Component({
@@ -17,6 +17,7 @@ export class EvenementenComponent implements OnInit {
   Plaats: string;
   Datum: string;
 
+
   bericht: string;
 
   ngOnInit() {
@@ -29,13 +30,16 @@ export class EvenementenComponent implements OnInit {
     })
   }
 
-  slaOp(eventid:number, agendaid:number){
+  slaOp(eventid:number){
+    if (ServiceService.loginId > 0){ 
+      console.log(ServiceService.loginId);
     this.service.voegToeAanAgenda(eventid).subscribe( data => {
       if (data){
         this.bericht = "Evenement toegevoegd aan agenda "
         console.log(data);
-      }else this.bericht = '';
-    })
+      }else this.bericht = ''
+    })}
+    else{ this.bericht = "U bent niet ingelogd"}
   }
 
 }

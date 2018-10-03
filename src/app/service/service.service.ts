@@ -15,13 +15,15 @@ const httpOptions = {
   providedIn: 'root'
 })
 
+
 export class ServiceService {
 
-  constructor(private http: HttpClient ) { }
+  constructor(private http: HttpClient, private service:ServiceService ) { }
 
   evenementId:number;
 
-  loginId:number;
+  static loginId: number;
+
 
   login(inlognaam: string, wachtwoord:string): Observable<number>{
    return this.http.post<number>('http://localhost:9090/api/inloggen/'+inlognaam+'/'+ wachtwoord, PersonDto )
@@ -33,20 +35,35 @@ export class ServiceService {
 
    
   showAgenda():Observable<EvenementDto[]>{
-    console.log(this.loginId);
-    return this.http.get<EvenementDto[]>('http://localhost:9090/api/agenda/'+ this.loginId)
+    console.log(ServiceService.loginId);
+    return this.http.get<EvenementDto[]>('http://localhost:9090/api/agenda/'+ ServiceService.loginId);
   }
   
   vindIemand(eventId:number):Observable<PersonDto[]>{
-    return this.http.get<PersonDto[]>('http://localhost:9090/api/VindEenMattie/'+ eventId)
+    return this.http.get<PersonDto[]>('http://localhost:9090/api/VindEenMattie/'+ eventId);
   }
 
   showAllEvents():Observable<EvenementDto[]>{
-    return this.http.get<EvenementDto[]>('http://localhost:9090/api/evenement/all')
+    return this.http.get<EvenementDto[]>('http://localhost:9090/api/evenement/all');
   }
 
-  voegToeAanAgenda(eventid:number):Observable<boolean>{
-    return this.http.post<boolean>('http://localhost:9090/api/VoegToeAanAgenda/'+eventid+'/'+ this.loginId, AgendaDto)
+  voegToeAanAgenda(eventid:number){
+    console.log(ServiceService.loginId);
+    return this.http.post('http://localhost:9090/api/VoegToeAanAgenda/'+eventid+'/'+ ServiceService.loginId, PersonDto);
+  }
+  
+  findById(id: number): Observable<EvenementDto>{
+    return this.http.get<EvenementDto>("http://localhost:9090/api/evenement/" + id);
+  }
+  
+  findByZoek (zoek : string) {
+    return this.http.get<EvenementDto[]>("http://localhost:9090/api/evenement/zoek/" + zoek);
   }
 
 }
+
+
+
+
+
+

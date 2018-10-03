@@ -1,3 +1,8 @@
+<a routerLink="/uitloggen" routerLinkActive="active">Uitloggen</a>,
+<a routerLink="/agenda" routerLinkActive="active">Mijn Agenda</a>,
+<a routerLink="/searchbar" routerLinkActive="active"> Zoek naar evenementen </a>
+
+
 <table>
     <thead>
       <tr>
@@ -11,7 +16,7 @@
         <td>{{e.naam}}</td>
         <td>{{e.plaats}}</td>
         <td>{{e.datum}}</td>
-        <td> <button (click) = "slaOp(e.id, 1)"> Voeg toe aan agenda </button></td>
+        <td> <button (click) = "slaOp(e.id)"> Voeg toe aan agenda </button></td>
       </tr>
       {{bericht}}
     </tbody>

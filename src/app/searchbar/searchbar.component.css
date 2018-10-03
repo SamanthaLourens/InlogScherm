@@ -1,0 +1,36 @@
+* 
+{ 
+    box-sizing: border-box;
+    box-sizing: border-box;
+    width: 50%;
+    left: 800px;
+  }
+ form{
+  margin: auto;
+  }
+  /* Style the search field */
+  form.example input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    height: 40px;
+    width: 60%;
+    background: #f1f1f1;
+  }
+  
+  /* Style the submit button */
+  form.example button {
+    padding: 12px;
+    font-size: 17px;
+    cursor: pointer;
+    color: white;
+    height: 40px;
+    width: 20%;
+    background: rgb(73, 81, 87);
+  }
+  
+  form.example button:hover {
+    background: #c9d5df;
+
+    
+  }

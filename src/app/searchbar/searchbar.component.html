@@ -1,0 +1,31 @@
+<a routerLink="/uitloggen" routerLinkActive="active">Uitloggen</a>,
+<a routerLink="/agenda" routerLinkActive="active">Mijn Agenda</a>,
+<a routerLink="/evenementen" routerLinkActive="active">Alle evenementen</a>
+
+
+<form class="example" action="action_page.php">
+    <input id=jojo type="text" [(ngModel)]="Search" placeholder="Zoek hier..." name="search">
+    <button (click)='findByID(Search)'>Zoek<i class="fa fa-search"></i></button>
+   </form>
+   
+   
+   <body >
+       <table>
+         <thead>
+           <tr>
+             <th>Evenement</th>
+             <th>Plaats</th>
+             <th>Datum</th>
+           </tr>
+         </thead>
+         <tbody>
+           <tr *ngFor='let evie of random'>
+             <td>{{evie.naam}}</td>
+             <td>{{evie.plaats}}</td>
+             <td>{{evie.datum}}</td>          
+             <td> <button (click) = 'opslaan(evie.id)' > Voeg toe aan agenda </button></td>             
+           </tr>
+         </tbody>
+       </table>
+       {{bericht}}
+       

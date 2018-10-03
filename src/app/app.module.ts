@@ -8,6 +8,8 @@ import { InlogschermComponent } from './inlogscherm/inlogscherm.component';
 import { AgendaComponent } from './agenda/agenda.component';
 import { VindiemandComponent } from './vindiemand/vindiemand.component';
 import { EvenementenComponent } from './evenementen/evenementen.component';
+import { UitloggenComponent } from './uitloggen/uitloggen.component';
+import { SearchbarComponent } from './searchbar/searchbar.component';
 
 
 
@@ -16,6 +18,8 @@ const appRoutes: Routes = [
   { path: 'agenda', component: AgendaComponent },
   { path: 'vindiemand', component: VindiemandComponent },
   { path: 'evenementen', component: EvenementenComponent },
+  { path: 'uitloggen', component: UitloggenComponent },
+  { path: 'searchbar', component: SearchbarComponent },
   { path: '',   redirectTo: 'inloggen', pathMatch: 'full' }
 ];
 
@@ -26,7 +30,9 @@ const appRoutes: Routes = [
     InlogschermComponent,
     AgendaComponent,
     VindiemandComponent,
-    EvenementenComponent
+    EvenementenComponent,
+    UitloggenComponent,
+    SearchbarComponent
   ],
   imports: [
     BrowserModule,

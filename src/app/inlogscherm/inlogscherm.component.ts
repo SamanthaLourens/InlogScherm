@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ServiceService } from '../service/service.service';
+import { ServiceService } from '../Service/service.service';
 import { PersonDto } from '../models/PersonDto';
 import { Router } from '@angular/router';
 import { AgendaComponent } from '../agenda/agenda.component';
@@ -36,11 +36,11 @@ export class InlogschermComponent implements OnInit {
    this.service.login(this.inlognaam, this.wachtwoord).subscribe( data => {
       if (data > 0){
         this.message = "inloggen toegestaan";
-        this.inlogId = data;
-        this.service.loginId = this.inlogId;
-        this.router.navigate(['/agenda']);
+        ServiceService.loginId = data;
+        this.router.navigate(['/searchbar']);
       }else{
-        this.message = "inloggen niet toegestaan"}
+        this.message = "inloggen niet toegestaan";
+      }
 
     })
 
@@ -50,8 +50,8 @@ export class InlogschermComponent implements OnInit {
   registrerenMogelijk(){
     this.service.registreren(this.registerName, this.setwachtwoord).subscribe(data =>{
       if (data){
-      this.message1 = "registreren gelukt"
-      }else this.message1 = "registreren mislukt"
+      this.message1 = "registreren gelukt";
+      }else this.message1 = "registreren mislukt";
     })
   
     }
