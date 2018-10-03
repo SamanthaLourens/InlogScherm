@@ -6,13 +6,17 @@ import { FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { InlogschermComponent } from './inlogscherm/inlogscherm.component';
 import { AgendaComponent } from './agenda/agenda.component';
+import { VindiemandComponent } from './vindiemand/vindiemand.component';
+import { EvenementenComponent } from './evenementen/evenementen.component';
+
 
 
 const appRoutes: Routes = [
   { path: 'inloggen', component: InlogschermComponent },
   { path: 'agenda', component: AgendaComponent },
+  { path: 'vindiemand', component: VindiemandComponent },
+  { path: 'evenementen', component: EvenementenComponent },
   { path: '',   redirectTo: 'inloggen', pathMatch: 'full' }
-
 ];
 
 
@@ -20,7 +24,9 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     InlogschermComponent,
-    AgendaComponent
+    AgendaComponent,
+    VindiemandComponent,
+    EvenementenComponent
   ],
   imports: [
     BrowserModule,

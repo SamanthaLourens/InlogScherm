@@ -1,0 +1,18 @@
+<table>
+    <thead>
+      <tr>
+        <th>{{Evenement}}</th>
+        <th>{{Plaats}}</th>
+        <th>{{Datum}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let e of events">
+        <td>{{e.naam}}</td>
+        <td>{{e.plaats}}</td>
+        <td>{{e.datum}}</td>
+        <td> <button (click) = "slaOp(e.id, 1)"> Voeg toe aan agenda </button></td>
+      </tr>
+      {{bericht}}
+    </tbody>
+  </table>

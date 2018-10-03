@@ -15,9 +15,11 @@ const httpOptions = {
   providedIn: 'root'
 })
 
-export class InloggenService {
+export class ServiceService {
 
   constructor(private http: HttpClient ) { }
+
+  evenementId:number;
 
   loginId:number;
 
@@ -48,4 +50,3 @@ export class InloggenService {
   }
 
 }
-

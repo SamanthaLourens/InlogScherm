@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { InloggenService } from '../service/inloggen.service';
+import { ServiceService } from '../service/service.service';
 import { PersonDto } from '../models/PersonDto';
+import { Router } from '@angular/router';
+import { AgendaComponent } from '../agenda/agenda.component';
 
 @Component({
   selector: 'app-inlogscherm',
@@ -23,8 +25,9 @@ export class InlogschermComponent implements OnInit {
 
   inlogId:number = 0; //Wordt eerst op 0 gezet daarna op id van de gebruiker als hij ingelogd is 
   
+
  
-  constructor(private service: InloggenService) { }
+  constructor(private service: ServiceService, private router:Router) { }
 
   ngOnInit() {
   }
@@ -34,11 +37,11 @@ export class InlogschermComponent implements OnInit {
       if (data > 0){
         this.message = "inloggen toegestaan";
         this.inlogId = data;
-        //console.log(data);
-        //console.log(this.inlogId);
         this.service.loginId = this.inlogId;
-      }else this.message = "inloggen niet toegestaan"
-      //console.log(data);
+        this.router.navigate(['/agenda']);
+      }else{
+        this.message = "inloggen niet toegestaan"}
+
     })
 
   }
@@ -47,7 +50,6 @@ export class InlogschermComponent implements OnInit {
   registrerenMogelijk(){
     this.service.registreren(this.registerName, this.setwachtwoord).subscribe(data =>{
       if (data){
-        //console.log(data);
       this.message1 = "registreren gelukt"
       }else this.message1 = "registreren mislukt"
     })

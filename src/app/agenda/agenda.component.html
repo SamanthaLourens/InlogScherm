@@ -1,7 +1,6 @@
 <header>Agenda</header>
 
 <body style="text-align: center">
-  <button (click) = "showPlans()"> Geplande evenementen </button>
   <table>
     <thead>
       <tr>
@@ -23,43 +22,9 @@
   
   
   <button (click) = 'allEvents()'> Laat alle evenementen zien </button>
-  <table>
-    <thead>
-      <tr>
-        <th>{{Evenement}}</th>
-        <th>{{Plaats}}</th>
-        <th>{{Datum}}</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let e of events">
-        <td>{{e.naam}}</td>
-        <td>{{e.plaats}}</td>
-        <td>{{e.datum}}</td>
-        <td> <button (click) = "slaOp(e.id, 1)"> Voeg toe aan agenda </button></td>
-      </tr>
-      {{bericht}}
-    </tbody>
-  </table>
+
   
-
-
-  <table>
-      <thead>
-        <tr>
-          <th>
-            {{laatzien}}
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let p of personen">
-          <td>{{p.naam}}</td>
-        </tr>
-        {{bericht}}
-      </tbody>
-    </table>
-    </body>
+</body>
   
 
  
