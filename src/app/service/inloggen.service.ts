@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable} from 'rxjs';
 import { PersonDto } from '../models/PersonDto';
+import { EvenementDto } from '../models/EvenementDto';
+import { AgendaDto } from '../models/AgendaDto';
 
 
 const httpOptions = {
@@ -17,18 +19,33 @@ export class InloggenService {
 
   constructor(private http: HttpClient ) { }
 
+  loginId:number;
+
+  login(inlognaam: string, wachtwoord:string): Observable<number>{
+   return this.http.post<number>('http://localhost:9090/api/inloggen/'+inlognaam+'/'+ wachtwoord, PersonDto )
+  }
+
+  registreren(registername:string, password:string): Observable<PersonDto>{
+    return this.http.post<PersonDto>('http://localhost:9090/api/aanmelden/'+registername+'/'+password, PersonDto);
+  }
+
+   
+  showAgenda():Observable<EvenementDto[]>{
+    console.log(this.loginId);
+    return this.http.get<EvenementDto[]>('http://localhost:9090/api/agenda/'+ this.loginId)
+  }
   
-  login(inlognaam: string): Observable<PersonDto[]>{
-   return this.http.get<PersonDto[]>('http://localhost:8080/api/person/name/'+ inlognaam);
+  vindIemand(eventId:number):Observable<PersonDto[]>{
+    return this.http.get<PersonDto[]>('http://localhost:9090/api/VindEenMattie/'+ eventId)
   }
 
-
-  registerCheck(inlognaam: string): Observable<PersonDto[]>{
-  return this.http.get<PersonDto[]>('http://localhost:8080/api/person/name/'+ inlognaam);
+  showAllEvents():Observable<EvenementDto[]>{
+    return this.http.get<EvenementDto[]>('http://localhost:9090/api/evenement/all')
   }
 
-  registreren(person:PersonDto): Observable<PersonDto>{
-    return this.http.post<PersonDto>('http://localhost:8080/api/person/', person);
+  voegToeAanAgenda(eventid:number):Observable<boolean>{
+    return this.http.post<boolean>('http://localhost:9090/api/VoegToeAanAgenda/'+eventid+'/'+ this.loginId, AgendaDto)
   }
 
 }
+

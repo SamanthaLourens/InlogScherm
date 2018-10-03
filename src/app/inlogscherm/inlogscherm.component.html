@@ -1,33 +1,41 @@
-<h1></h1>
+<h1>U kunt hier inloggen of registreren</h1>
 
+<div>
+  <header> Inloggen </header>
 <p>
-  <label for="inlognaam">Inlognaam  </label>
-  <input [(ngModel)] = 'inlognaam'>
+  <label for="inlognaam"> Gebruikersnaam  </label>
+  <input [(ngModel)] = 'inlognaam' value="Gebruikersnaam">
 </p>
 
 <p>
   <label for="wachtwoord">Wachtwoord  </label>
-  <input [(ngModel)] = 'wachtwoord'>
+  <input type=password [(ngModel)] = 'wachtwoord' value="Wachtwoord">
 </p>
 
 <p>
   <button (click) = "inloggen()"> inloggen </button>
   {{message}}
 </p>  
+</div>
 
 
 
+<div>
+
+  <header> Registreren </header>
 <p>
-  <label for="registername">Gebruikersnaam  </label>
-  <input [(ngModel)] = 'registerName'>
+  <label for="registerName">Gebruikersnaam  </label>
+  <input [(ngModel)] = 'registerName' value= "Gebruikersnaam">
 </p>
 
 
 <p>
-  <label for="wachtwoord">Wachtwoord  </label>
-  <input [(ngModel)] = 'setwachtwoord'>
+  <label for="setwachtwoord">Wachtwoord  </label>
+  <input type = password [(ngModel)] = 'setwachtwoord' value = "wachtwoord">
 </p>
 <p>
   <button (click) = "registrerenMogelijk()"> registreren </button> 
   {{message1}}
 </p>  
+
+</div>
