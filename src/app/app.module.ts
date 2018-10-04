@@ -10,6 +10,8 @@ import { VindiemandComponent } from './vindiemand/vindiemand.component';
 import { EvenementenComponent } from './evenementen/evenementen.component';
 import { UitloggenComponent } from './uitloggen/uitloggen.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
+import { HeaderComponent } from './header/header.component';
+import { MenubalkComponent } from './menubalk/menubalk.component';
 
 
 
@@ -32,7 +34,9 @@ const appRoutes: Routes = [
     VindiemandComponent,
     EvenementenComponent,
     UitloggenComponent,
-    SearchbarComponent
+    SearchbarComponent,
+    HeaderComponent,
+    MenubalkComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,9 @@
+#container{
+    width:100%;
+    min-height: 100vh;
+    background-color: #4a888c;
+    border-width: 2px;
+    border-color: #050d53;
+    border-style: dotted;
+
+}

@@ -1,6 +1,4 @@
-<a routerLink="/uitloggen" routerLinkActive="active">Uitloggen</a>,
-<a routerLink="/agenda" routerLinkActive="active">Mijn Agenda</a>,
-<a routerLink="/evenementen" routerLinkActive="active">Alle evenementen</a>
+
 
 
 <form class="example" action="action_page.php">
@@ -23,7 +21,7 @@
              <td>{{evie.naam}}</td>
              <td>{{evie.plaats}}</td>
              <td>{{evie.datum}}</td>          
-             <td> <button (click) = 'opslaan(evie.id)' > Voeg toe aan agenda </button></td>             
+             <td> <button id='opslaan' (click) = 'opslaan(evie.id)' > Voeg toe aan agenda </button></td>             
            </tr>
          </tbody>
        </table>
