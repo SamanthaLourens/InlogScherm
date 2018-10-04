@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ServiceService } from '../Service/service.service';
 import { EvenementDto } from '../models/EvenementDto';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-searchbar',
@@ -18,9 +18,13 @@ export class SearchbarComponent implements OnInit {
 
   bericht:string;
 
-  constructor(private service: ServiceService) { }
+  constructor(private service: ServiceService, private router:Router) { }
 
   ngOnInit() {}
+
+  Evenement:string;
+  Plaats:string;
+  Datum:string;
 
   login:number;
 
@@ -28,21 +32,12 @@ export class SearchbarComponent implements OnInit {
   
   findByID(id : string){
     var hetID = parseInt(id);
+    this.service.evenementId = hetID;
+    ServiceService.zoek = id;
+    console.log(id);
+    this.router.navigate(['/searchresults'])
 
-    this.service.findByZoek(id).subscribe(data => {
-      this.random = data;
-      console.log(data);
-    })
+    }
   }
 
 
-  opslaan(eventid:number){
-      this.service.voegToeAanAgenda(eventid).subscribe( data => {
-        console.log(eventid);
-        console.log(data);
-        if (data){
-          this.bericht = "Evenement toegevoegd aan agenda ";
-        }else this.bericht = '';
-      })}
-  
-}

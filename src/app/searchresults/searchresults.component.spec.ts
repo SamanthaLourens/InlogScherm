@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { InlogschermComponent } from './inlogscherm.component';
+import { SearchresultsComponent } from './searchresults.component';
 
-describe('InlogschermComponent', () => {
-  let component: InlogschermComponent;
-  let fixture: ComponentFixture<InlogschermComponent>;
+describe('SearchresultsComponent', () => {
+  let component: SearchresultsComponent;
+  let fixture: ComponentFixture<SearchresultsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ InlogschermComponent ]
+      declarations: [ SearchresultsComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(InlogschermComponent);
+    fixture = TestBed.createComponent(SearchresultsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

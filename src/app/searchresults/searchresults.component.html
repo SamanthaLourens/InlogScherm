@@ -1,0 +1,21 @@
+
+
+    <body >
+        <table>
+          <thead>
+            <tr>
+              <th>{{Evenement}}</th>
+              <th>{{Plaats}}</th>
+              <th>{{Datum}}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor='let evie of random'>
+              <td>{{evie.naam}}</td>
+              <td>{{evie.plaats}}</td>
+              <td>{{evie.datum}}</td>          
+              <td> <button (click) = 'opslaan(evie.id)' > Voeg toe aan agenda </button></td>             
+            </tr>
+          </tbody>
+        </table>
+        {{bericht}}

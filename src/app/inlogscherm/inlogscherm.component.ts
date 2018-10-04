@@ -11,7 +11,7 @@ import { AgendaComponent } from '../agenda/agenda.component';
 })
 
 
-export class InlogschermComponent implements OnInit {
+export class InlogSchermComponent implements OnInit {
 
   // om in te loggen
   inlognaam: string;
@@ -56,8 +56,3 @@ export class InlogschermComponent implements OnInit {
   
     }
 }
-
-
-
-
-

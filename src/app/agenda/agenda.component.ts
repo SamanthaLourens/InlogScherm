@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ServiceService } from '../Service/service.service';
 import { EvenementDto } from "../models/EvenementDto";
-import { InlogschermComponent } from "../inlogscherm/inlogscherm.component";
+import { InlogSchermComponent } from "../inlogscherm/inlogscherm.component";
 import { PersonDto } from '../models/PersonDto';
 import { Router } from '@angular/router';
 

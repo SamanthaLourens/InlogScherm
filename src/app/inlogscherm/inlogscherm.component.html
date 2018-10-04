@@ -1,15 +1,18 @@
+
 <h1>U kunt hier inloggen of registreren</h1>
 
-<div>
+<br>
+<br>
+
+<div class = "a">
   <header> Inloggen </header>
 <p>
-  <label for="inlognaam"> Gebruikersnaam  </label>
-  <input [(ngModel)] = 'inlognaam' value="Gebruikersnaam">
+
+  <input [(ngModel)] = 'inlognaam' placeholder = "Gebruikersnaam">
 </p>
 
 <p>
-  <label for="wachtwoord">Wachtwoord  </label>
-  <input type=password [(ngModel)] = 'wachtwoord' value="Wachtwoord">
+  <input type=password [(ngModel)] = 'wachtwoord' placeholder="Wachtwoord">
 </p>
 
 <p>
@@ -18,20 +21,20 @@
 </p>  
 </div>
 
+<br>
+<br>
 
 
-<div>
+<div class = "b">
 
   <header> Registreren </header>
 <p>
-  <label for="registerName">Gebruikersnaam  </label>
-  <input [(ngModel)] = 'registerName' value= "Gebruikersnaam">
+  <input [(ngModel)] = 'registerName' placeholder= "Gebruikersnaam">
 </p>
 
 
 <p>
-  <label for="setwachtwoord">Wachtwoord  </label>
-  <input type = password [(ngModel)] = 'setwachtwoord' value = "wachtwoord">
+  <input type = password [(ngModel)] = 'setwachtwoord' placeholder = "wachtwoord">
 </p>
 <p>
   <button (click) = "registrerenMogelijk()"> registreren </button> 

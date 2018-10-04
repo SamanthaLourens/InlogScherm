@@ -23,9 +23,9 @@ export class EvenementenComponent implements OnInit {
   ngOnInit() {
     this.service.showAllEvents().subscribe( data =>{
       this.events = data;
-      this.Evenement = 'Evenementen';
-      this.Plaats = 'Plaats';
-      this.Datum = 'Datum';
+      this.Evenement = '   Evenementen    ';
+      this.Plaats = '    Plaats    ';
+      this.Datum = '    Datum    ';
       console.log(this.events);
     })
   }
@@ -35,9 +35,9 @@ export class EvenementenComponent implements OnInit {
       console.log(ServiceService.loginId);
     this.service.voegToeAanAgenda(eventid).subscribe( data => {
       if (data){
-        this.bericht = "Evenement toegevoegd aan agenda "
+        this.bericht = "Evenement toegevoegd aan agenda ";
         console.log(data);
-      }else this.bericht = ''
+      }else this.bericht = '';
     })}
     else{ this.bericht = "U bent niet ingelogd"}
   }

@@ -1,4 +1,4 @@
-<a routerLink="/uitloggen" routerLinkActive="active">Uitloggen</a>,
+<a routerLink="/uitloggen" routerLinkActive="active">In-/Uitloggen</a>,
 <a routerLink="/agenda" routerLinkActive="active">Mijn Agenda</a>,
 <a routerLink="/evenementen" routerLinkActive="active">Alle evenementen</a>
 
@@ -7,15 +7,20 @@
     <input id=jojo type="text" [(ngModel)]="Search" placeholder="Zoek hier..." name="search">
     <button (click)='findByID(Search)'>Zoek<i class="fa fa-search"></i></button>
    </form>
-   
-   
-   <body >
+  
+<br>
+<br>
+<br>
+<br>   
+
+
+    <body >
        <table>
          <thead>
            <tr>
-             <th>Evenement</th>
-             <th>Plaats</th>
-             <th>Datum</th>
+             <th>{{Evenement}}</th>
+             <th>{{Plaats}}</th>
+             <th>{{Datum}}</th>
            </tr>
          </thead>
          <tbody>

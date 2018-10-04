@@ -24,6 +24,7 @@ export class ServiceService {
 
   static loginId: number;
 
+ static zoek: string;
 
   login(inlognaam: string, wachtwoord:string): Observable<number>{
    return this.http.post<number>('http://localhost:9090/api/inloggen/'+inlognaam+'/'+ wachtwoord, PersonDto )
@@ -56,8 +57,8 @@ export class ServiceService {
     return this.http.get<EvenementDto>("http://localhost:9090/api/evenement/" + id);
   }
   
-  findByZoek (zoek : string) {
-    return this.http.get<EvenementDto[]>("http://localhost:9090/api/evenement/zoek/" + zoek);
+  findByZoek () {
+    return this.http.get<EvenementDto[]>("http://localhost:9090/api/evenement/zoek/" + ServiceService.zoek);
   }
 
 }
